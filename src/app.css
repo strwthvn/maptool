@@ -1,0 +1,171 @@
+@import '@fontsource-variable/sofia-sans-semi-condensed';
+
+:root {
+  /* Палитра Colours 101 Dark */
+  --surface: #424249;
+  --surface-deep: #35353b;
+  --surface-raised: #4f4f57;
+  --edge: #5e5e67;
+  --ink: #edebe8;
+  --ink-soft: #bdb8b4;
+  --ink-faint: #85828a;
+  --accent: #ff5e2c;
+  --accent-ink: #1e1e22;
+  /* Непроходимое на маршруте: тот же жёлтый, что у ленты на карте. */
+  --hazard: #ffd21f;
+  /* Видимость: видно и не видно — те же цвета, что у линии и зоны на карте. */
+  --seen: #3ddc97;
+  --unseen: #ff4d5e;
+
+  --panel-width: 320px;
+  --radius: 6px;
+  --lift: 0 2px 10px rgba(20, 20, 24, 0.45);
+
+  --text: 1rem;
+  --text-small: 0.875rem;
+
+  font-family: 'Sofia Sans Semi Condensed Variable', 'Sofia Sans Semi Condensed', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.3;
+  color: var(--ink);
+  background: var(--surface-deep);
+  color-scheme: dark;
+  accent-color: var(--accent);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+}
+
+button {
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+input[type='text'],
+input[type='number'],
+select,
+textarea {
+  width: 100%;
+  min-width: 0;
+  height: 36px;
+  padding: 0 9px;
+  background: var(--surface-deep);
+  border: 1px solid var(--edge);
+  border-radius: var(--radius);
+}
+
+textarea {
+  display: block;
+  height: auto;
+  padding: 7px 9px;
+  line-height: inherit;
+  resize: vertical;
+}
+
+input::placeholder {
+  color: var(--ink-faint);
+}
+
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline-offset: 0;
+}
+
+fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+legend,
+.field > span {
+  display: block;
+  padding: 10px 0 4px;
+  font-size: var(--text-small);
+  color: var(--ink-soft);
+}
+
+.field {
+  display: block;
+}
+
+.action {
+  min-height: 36px;
+  padding: 0 12px;
+  border: 1px solid var(--edge);
+  border-radius: var(--radius);
+}
+
+.action:hover:not(:disabled) {
+  background: var(--surface-raised);
+}
+
+.action:disabled {
+  color: var(--ink-faint);
+  cursor: default;
+}
+
+.action.primary {
+  font-weight: 600;
+  color: var(--accent-ink);
+  background: var(--accent);
+  border-color: var(--accent);
+}
+
+.action.primary:hover:not(:disabled) {
+  background: #ff7447;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  flex: none;
+}
+
+input[type='range'] {
+  width: 100%;
+  min-width: 0;
+  height: 20px;
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  outline-offset: -2px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
